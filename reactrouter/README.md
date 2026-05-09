@@ -1,16 +1,134 @@
-# React + Vite
+# React Router Project 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based web application built using **Vite** and **React Router DOM**. The project demonstrates routing concepts like nested routes, dynamic routing, loaders, and reusable components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Features
 
-## React Compiler
+* ⚡ Fast setup using Vite
+* 🧭 Client-side routing with React Router
+* 🔗 Nested routes implementation
+* 🧑 Dynamic routing using `useParams`
+* 📡 Data loading using `loader` (React Router feature)
+* 🎨 Responsive UI using Tailwind CSS
+* 📄 Reusable components (Header, Footer, Layout)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧱 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+│── components/
+│   ├── Home/
+│   ├── About/
+│   ├── Contact/
+│   ├── Github/
+│   ├── User/
+│   ├── Header/
+│   └── Footer/
+│
+│── Layout.jsx
+│── App.jsx
+│── main.jsx
+│── index.css
+```
+
+---
+
+## 🚀 Routing Overview
+
+The routing is handled using `createBrowserRouter` and `createRoutesFromElements`.
+
+### Routes:
+
+* `/` → Home page
+* `/about` → About page
+* `/contact` → Contact page
+* `/github` → GitHub profile page (uses loader)
+* `/user/:userid` → Dynamic user page
+
+---
+
+## 🧑 Dynamic Routing Example
+
+```js
+<Route path='user' element={<User/>}>
+  <Route path=':userid' element={<User/>} />
+</Route>
+```
+
+Usage:
+
+```
+/user/123
+```
+
+---
+
+## 📡 Loader Example (GitHub API)
+
+Data is fetched before rendering the component:
+
+```js
+export const githubInfoLoader = async () => {
+    const response = await fetch('https://api.github.com/users/nanduholkar')
+    return response.json()
+}
+```
+
+---
+
+## 🧩 Key Concepts Used
+
+* React Components
+* Props & Hooks
+* `useParams`
+* `useLoaderData`
+* React Router DOM v6+
+* Nested Routing
+
+---
+
+## 🛠️ Installation & Setup
+
+```bash
+# clone repo
+git clone <repo-url>
+
+# install dependencies
+npm install
+
+# run development server
+npm run dev
+```
+
+---
+
+## 📸 UI Overview
+
+* Header with navigation links
+* Footer with social links
+* Home landing page UI
+* About page content section
+* GitHub data fetching UI
+* User dynamic page
+
+---
+
+## 📌 Tech Stack
+
+* React.js
+* React Router DOM
+* Vite
+* Tailwind CSS
+
+---
+
+## 👨‍💻 Author
+
+Built by Nandu for learning React Router concepts and frontend development practice.
+
+---
+
