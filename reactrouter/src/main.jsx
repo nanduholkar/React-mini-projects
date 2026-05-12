@@ -9,7 +9,6 @@ import Footer from './components/Footer/Footer.jsx'
 import About from './components/About/About.jsx'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Github, { githubInfoLoader } from './components/Github/Github.jsx'
-import Contact from './components/Contact/Contact.jsx'
 import User from './components/User/User.jsx'
 
 const router = createBrowserRouter(
